@@ -1,8 +1,6 @@
-import 'package:bloc_demo/bloc/cubits/internet_cubit.dart';
-import 'package:bloc_demo/bloc/internet_bloc/internet_bloc.dart';
-import 'package:bloc_demo/screen/home_screen.dart';
+import 'package:bloc_demo/sign_in/sign_in_screen.dart';
+import 'package:bloc_demo/welcome/welcome_screen.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -14,17 +12,13 @@ class BlocApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-     // create: (context) => InternetBloc(),
-      create: (context) => InternetCubit(),
-      child: MaterialApp(
-        title: 'Bloc Demo',
-        debugShowCheckedModeBanner: false,
-        home: HomeScreen(),
-        theme: ThemeData(
-          primarySwatch: Colors.blue,
-        ),
+    return MaterialApp(
+      title: 'Bloc Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
       ),
+      home: WelcomeScreen(),
     );
   }
 }
